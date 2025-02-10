@@ -1,0 +1,33 @@
+{
+<<<<<<< HEAD
+  "name": "bmcc",
+=======
+  "name": "lab-03",
+>>>>>>> 0399569 (Initial commit)
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+<<<<<<< HEAD
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdzc123/bmcc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qdzc123/bmcc/issues"
+  },
+  "homepage": "https://github.com/qdzc123/bmcc#readme",
+=======
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+>>>>>>> 0399569 (Initial commit)
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
