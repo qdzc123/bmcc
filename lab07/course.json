@@ -1,0 +1,23 @@
+{
+  "title": "Math 101",
+  "description": "Algebra Basics",
+  "duration": 3,
+  "students": [
+    {
+      "name": "John Doe",
+      "age": 20,
+      "subjects": [
+        "Algebra",
+        "Calculus"
+      ]
+    },
+    {
+      "name": "Jane Smith",
+      "age": 22,
+      "subjects": [
+        "Geometry",
+        "Statistics"
+      ]
+    }
+  ]
+}
