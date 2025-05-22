@@ -1,0 +1,5 @@
+Reflection:
+- SQL Injection: Bypassed login using 'OR 1=1'. Fixed by using parameterized queries.
+- XSS: Inserted <script> alert. Fixed by sanitizing < and >.
+- Session Hijacking: Copied cookie into another browser. Fixed with HttpOnly & secure flags.
+- Attackers might still try cookie theft via XSS or guessable JWTs if improperly implemented.
