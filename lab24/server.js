@@ -1,20 +1,15 @@
-const express = require('express');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const app = express();
-
 const options = {
-  key: fs.readFileSync(path.join('/etc/letsencrypt/live', 'yourdomain.com', 'privkey.pem')),
-  cert: fs.readFileSync(path.join('/etc/letsencrypt/live', 'yourdomain.com', 'cert.pem')),
-  ca: fs.readFileSync(path.join('/etc/letsencrypt/live', 'yourdomain.com', 'chain.pem'))
+  key: fs.readFileSync(path.join(__dirname, 'server.key')),
+  cert: fs.readFileSync(path.join(__dirname, 'server.cert'))
 };
 
-app.get('/', (req, res) => {
-  res.send('Hello, HTTPS world!');
-});
-
-https.createServer(options, app).listen(443, () => {
-  console.log('HTTPS server running on port 443');
+https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end('Hello, this is a self-signed HTTPS server!');
+}).listen(3000, () => {
+  console.log('HTTPS server running at https://localhost:3000');
 });
