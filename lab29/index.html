@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 29 - Web Components</title>
+</head>
+<body>
+  <h1>Web Components Lab</h1>
+
+  <hello-world></hello-world>
+
+  <template id="tpl-greeter">
+    <style>p { color: teal; }</style>
+    <p>Greetings, <slot></slot>!</p>
+  </template>
+  <x-greeter>Student</x-greeter>
+
+  <user-card name="Alice"></user-card>
+
+  <tab-panel>
+    <button slot="tab" onclick="activate(0)">Tab 1</button>
+    <button slot="tab" onclick="activate(1)">Tab 2</button>
+    <div slot="panel" id="p0">Content for Tab 1</div>
+    <div slot="panel" id="p1">Content for Tab 2</div>
+  </tab-panel>
+
+  <script type="module">
+    import './components/hello-world.js';
+    import './components/greeter.js';
+    import './components/user-card.js';
+    import './components/tab-panel.js';
+
+    function activate(i) {
+      Array.from(document.querySelectorAll('[slot=panel]')).forEach((el, idx) => {
+        el.slot = idx === i ? 'panel active' : 'panel';
+      });
+    }
+    activate(0);
+  </script>
+</body>
+</html>
